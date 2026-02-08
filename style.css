@@ -87,3 +87,29 @@ button:active {
   opacity: 1;
   transform: scale(1);
 }
+/* 💖 HEART BACKGROUND FIX */
+.heart {
+  position: fixed;
+  top: -30px;
+  font-size: 24px;
+  animation: fall 5s linear;
+  pointer-events: none;
+  z-index: 1; /* BEHIND CONTENT */
+  opacity: 0.8;
+}
+
+/* 🌧️ Falling animation */
+@keyframes fall {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+/* 🖼️ SLIDESHOW ALWAYS ON TOP */
+.slideshow {
+  position: relative;
+  z-index: 10;
+}
