@@ -1,36 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Minnu jii 💖</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
   <h1>For my wifuu Minnu jii 💖</h1>
 
-  <p>
-    From the moment you came into my life, everything changed.<br><br>
-    My heart chose you forever.<br><br>
+  <p class="msg">
+    From the moment you came into my life,<br>
+    my heart chose you forever 💕<br><br>
     Will you be mine forever? 💍
   </p>
 
-  <div class="buttons">
-    <button id="yes">YES 💖</button>
-    <button id="no">NO ❌</button>
-  </div>
+  <button id="yes" onclick="goLove()">YES 💖</button>
+  <button id="no">NO ❌</button>
 
-  <div id="love" class="hidden">
-    <h2>I knew it 🥰💞</h2>
-    <p>You are my forever ❤️</p>
-  </div>
+  <script>
+    function goLove() {
+      window.location.href = "love.html";
+    }
+  </script>
 
-  <!-- ✅ SLIDESHOW MUST BE HERE -->
-  <div class="slideshow">
-    <img src="IMG_20260209_002909_413.jpg" class="slide active">
-    <img src="Screenshot_20260209_002835_InstaPro.jpg" class="slide">
-    <img src="Screenshot_20260209_002855_InstaPro.jpg" class="slide">
-    <img src="rani_gmr-20260209-0001.jpg" class="slide">
-  </div>
-
-  <audio id="music">
-    <source src="Lyrical__Humsafar_Song__Saiyaara__.mp3">
-    <source src="Main_Tera_Ho_Gaya_.mp3">
-  </audio>
-
-  <script src="script.js"></script>
 </body>
 </html>
