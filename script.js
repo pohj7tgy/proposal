@@ -22,25 +22,6 @@ function typeText() {
 }
 typeText();
 
-/* Heart Rain */
-setInterval(() => {
-  let heart = document.createElement("div");
-  heart.innerHTML = "💖";
-  heart.style.position = "fixed";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.top = "-20px";
-  heart.style.fontSize = "25px";
-  document.body.appendChild(heart);
-
-  let fall = setInterval(() => {
-    heart.style.top = heart.offsetTop + 2 + "px";
-  }, 20);
-
-  setTimeout(() => {
-    clearInterval(fall);
-    heart.remove();
-  }, 5000);
-}, 300);
 
 /* Slideshow */
 let slides = document.querySelectorAll(".slide");
