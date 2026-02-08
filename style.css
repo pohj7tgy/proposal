@@ -1,4 +1,3 @@
-/* 🌌 BODY – DARK ROMANTIC THEME */
 body {
   background: radial-gradient(circle at top, #1a001f, #000);
   color: #fff;
@@ -8,245 +7,106 @@ body {
   overflow-x: hidden;
 }
 
-/* 💖 HEADINGS */
 h1 {
   color: #ff4da6;
-  text-shadow: 0 0 15px rgba(255, 77, 166, 0.9);
-  margin-bottom: 10px;
+  text-shadow: 0 0 15px #ff4da6;
 }
 
-/* ✍️ MESSAGE TEXT */
 .msg {
-  width: 85%;
+  width: 90%;
   margin: 20px auto;
   font-size: 18px;
   line-height: 1.8;
-  text-shadow: 0 0 8px rgba(255, 100, 180, 0.6);
+  white-space: pre-line;
 }
 
-/* 🔘 3D BUTTONS */
+/* 3D Buttons */
 button {
-  padding: 15px 36px;
+  padding: 15px 38px;
   font-size: 18px;
-  border-radius: 40px;
+  border-radius: 45px;
   border: none;
   cursor: pointer;
   font-family: 'Special Elite', cursive;
   margin: 15px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* 💕 YES BUTTON */
 #yes {
   background: linear-gradient(145deg, #ff5fa2, #ff2f7d);
   color: white;
-  box-shadow: 0 8px 0 #b91c5c, 0 12px 25px rgba(255, 77, 166, 0.6);
+  box-shadow: 0 8px 0 #b91c5c;
 }
 
-/* ❌ NO BUTTON */
 #no {
-  background: linear-gradient(145deg, #444, #222);
+  background: #333;
   color: white;
   position: absolute;
-  box-shadow: 0 8px 0 #111;
 }
 
-/* 👆 PRESS EFFECT */
 button:active {
   transform: translateY(6px);
   box-shadow: none;
 }
 
-/* 📸 SLIDESHOW – FIXED (NO WHITE HALF) */
+/* Slideshow */
 .slideshow {
-  width: 280px;
-  height: 360px;              /* IMPORTANT FIX */
-  margin: 30px auto;
-  border-radius: 20px;
+  width: 90vw;
+  max-width: 380px;
+  height: 90vw;
+  max-height: 380px;
+  margin: 35px auto;
+  border-radius: 24px;
   overflow: hidden;
   position: relative;
-  background: black;          /* removes white area */
-  box-shadow: 0 0 30px rgba(255, 77, 166, 0.6);
+  background: #000;
+  box-shadow: 0 0 40px rgba(255, 77, 166, 0.7);
 }
 
-/* 🖼️ SLIDES */
 .slide {
   position: absolute;
-  inset: 0;                   /* full cover */
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;          /* KEY FIX */
-  object-position: center;
+  object-fit: cover;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out, transform 1.5s ease;
-  transform: scale(1.05);
+  transition: opacity 1.5s ease-in-out;
 }
 
-/* 🌸 ACTIVE SLIDE */
 .slide.active {
   opacity: 1;
-  transform: scale(1);
-}
-/* 💖 HEART BACKGROUND FIX */
-.heart {
-  position: fixed;
-  top: -30px;
-  font-size: 24px;
-  animation: fall 5s linear;
-  pointer-events: none;
-  z-index: 1; /* BEHIND CONTENT */
-  opacity: 0.8;
 }
 
-/* 🌧️ Falling animation */
-@keyframes fall {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(110vh);
-  }
-}
-
-/* ✨ GLOWING ROMANTIC OBJECTS */
+/* Bottom Glow */
 .glow-container {
   position: fixed;
-  bottom: 0;
+  bottom: -40px;
   left: 0;
   width: 100%;
-  height: 180px;
+  height: 160px;
   pointer-events: none;
-  z-index: 1; /* behind slideshow */
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: -1;
 }
 
 .glow {
-  position: absolute;
-  bottom: 20px;
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle, rgba(255,77,166,0.9), rgba(255,77,166,0.1), transparent);
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  animation: floatGlow 6s ease-in-out infinite;
-  opacity: 0.8;
-}
-
-/* Different positions & timings */
-.glow:nth-child(1) { left: 10%; animation-delay: 0s; }
-.glow:nth-child(2) { left: 30%; animation-delay: 1.5s; }
-.glow:nth-child(3) { left: 50%; animation-delay: 3s; }
-.glow:nth-child(4) { left: 70%; animation-delay: 2s; }
-.glow:nth-child(5) { left: 90%; animation-delay: 4s; }
-
-@keyframes floatGlow {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-30px) scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.6;
-  }
-}
-
-/* 🖼️ Keep slideshow above glow */
-.slideshow {
-  position: relative;
-  z-index: 10;
-}
-
-/* 🌟 PREMIUM ROMANTIC GLOW UPGRADE */
-.glow-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 200px;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1; /* behind slideshow */
-}
-
-/* Base glow */
-.glow {
-  position: absolute;
-  bottom: 20px;
-  border-radius: 50%;
-  filter: blur(6px);
-  animation: floatGlow 8s ease-in-out infinite,
-             drift 20s linear infinite;
-  opacity: 0.8;
-}
-
-/* Size variations */
-.glow.big {
-  width: 90px;
-  height: 90px;
-  background: radial-gradient(circle,
-    rgba(255,77,166,1),
-    rgba(255,77,166,0.4),
-    transparent);
-}
-
-.glow.medium {
-  width: 65px;
-  height: 65px;
-  background: radial-gradient(circle,
-    rgba(255,120,200,1),
-    rgba(255,120,200,0.3),
-    transparent);
-}
-
-.glow.small {
-  width: 40px;
-  height: 40px;
-  background: radial-gradient(circle,
-    rgba(200,120,255,1),
-    rgba(200,120,255,0.3),
-    transparent);
-}
-
-/* Positioning */
-.glow:nth-child(1) { left: 5%; animation-delay: 0s; }
-.glow:nth-child(2) { left: 25%; animation-delay: 2s; }
-.glow:nth-child(3) { left: 50%; animation-delay: 4s; }
-.glow:nth-child(4) { left: 70%; animation-delay: 1s; }
-.glow:nth-child(5) { left: 90%; animation-delay: 3s; }
-
-/* Vertical breathing */
-@keyframes floatGlow {
-  0%   { transform: translateY(0) scale(1); opacity: 0.5; }
-  50%  { transform: translateY(-40px) scale(1.15); opacity: 1; }
-  100% { transform: translateY(0) scale(1); opacity: 0.5; }
-}
-
-/* Horizontal drift */
-@keyframes drift {
-  0%   { transform: translateX(0); }
-  50%  { transform: translateX(30px); }
-  100% { transform: translateX(0); }
-}
-
-/* 🖼️ Ensure slideshow always above glow */
-.slideshow {
-  position: relative;
-  z-index: 10;
-}
-
-/* 🌈 GRADIENT COLOR SHIFT */
-.glow {
   background: radial-gradient(circle,
     hsl(var(--hue), 100%, 70%),
     hsl(var(--hue), 100%, 40%),
-    transparent);
-  transition: transform 0.15s ease, opacity 0.15s ease;
+    transparent
+  );
+  filter: blur(45px);
+  opacity: 0.6;
+  --hue: 330;
+  animation: slowPulse 6s infinite;
 }
 
-/* Initial hue value */
-.glow {
-  --hue: 330; /* pink */
+@keyframes slowPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
 }
