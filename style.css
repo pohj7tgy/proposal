@@ -1,41 +1,60 @@
 body {
-  background: radial-gradient(circle, #000, #12001f);
+  background: radial-gradient(circle at top, #1a001f, #000);
   color: #fff;
-  font-family: Arial;
+  font-family: 'Special Elite', cursive;
   text-align: center;
-  overflow: hidden;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
 h1 {
   color: #ff4da6;
-  margin-top: 40px;
+  text-shadow: 0 0 15px #ff4da6;
 }
 
 .msg {
-  width: 80%;
-  margin: auto;
+  width: 85%;
+  margin: 20px auto;
   font-size: 18px;
+  line-height: 1.8;
 }
 
+/* 3D Buttons */
 button {
-  padding: 15px 30px;
+  padding: 15px 36px;
   font-size: 18px;
-  border-radius: 30px;
+  border-radius: 40px;
   border: none;
-  margin: 20px;
+  cursor: pointer;
+  font-family: 'Special Elite', cursive;
+  margin: 15px;
 }
 
-#yes { background: #ff4da6; color: white; }
-#no  { background: #333; color: white; position: absolute; }
+#yes {
+  background: linear-gradient(145deg, #ff5fa2, #ff2f7d);
+  color: white;
+  box-shadow: 0 8px 0 #b91c5c;
+}
 
-.hidden { display: none; }
+#no {
+  background: #333;
+  color: white;
+  position: absolute;
+}
+
+button:active {
+  transform: translateY(6px);
+  box-shadow: none;
+}
+
+/* Slideshow */
 .slideshow {
   width: 280px;
   height: 280px;
-  margin: 20px auto;
+  margin: 30px auto;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 0 25px rgba(255, 77, 166, 0.6);
+  box-shadow: 0 0 30px rgba(255, 77, 166, 0.6);
   position: relative;
 }
 
@@ -45,11 +64,9 @@ button {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out, transform 1.5s;
-  transform: scale(1.1);
+  transition: opacity 1.5s ease-in-out;
 }
 
 .slide.active {
   opacity: 1;
-  transform: scale(1);
 }
