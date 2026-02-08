@@ -17,11 +17,10 @@ function typeText() {
   if (i < text.length) {
     document.getElementById("typeText").innerHTML += text.charAt(i);
     i++;
-    setTimeout(typeText, 50);
+    setTimeout(typeText, 45);
   }
 }
 typeText();
-
 
 /* Slideshow */
 let slides = document.querySelectorAll(".slide");
@@ -33,10 +32,9 @@ setInterval(() => {
   slides[currentSlide].classList.add("active");
 }, 3000);
 
-
-/* 🎶 MUSIC REACTIVE GLOW */
+/* Music Reactive Glow */
 const audio = document.getElementById("music");
-const glows = document.querySelectorAll(".glow");
+const glow = document.querySelector(".glow");
 
 let audioCtx, analyser, source, dataArray;
 
@@ -50,38 +48,27 @@ function initAudio() {
 
   analyser.fftSize = 256;
   dataArray = new Uint8Array(analyser.frequencyBinCount);
-
   animateGlow();
 }
 
-/* Animate glow with music */
 function animateGlow() {
   analyser.getByteFrequencyData(dataArray);
+  let avg = dataArray.reduce((a, b) => a + b) / dataArray.length;
 
-  let avg =
-    dataArray.reduce((a, b) => a + b, 0) / dataArray.length;
-
-  let scale = 1 + avg / 250;
-  let opacity = Math.min(1, avg / 180 + 0.3);
-
-  glows.forEach(glow => {
-    glow.style.transform = `scale(${scale})`;
-    glow.style.opacity = opacity;
-  });
+  glow.style.transform = `scale(${1 + avg / 250})`;
+  glow.style.opacity = Math.min(1, avg / 180 + 0.3);
 
   requestAnimationFrame(animateGlow);
 }
 
-/* 🌈 GRADIENT COLOR SHIFT */
+/* Gradient Shift */
 let hue = 330;
 setInterval(() => {
   hue = (hue + 1) % 360;
-  glows.forEach(glow => {
-    glow.style.setProperty("--hue", hue);
-  });
+  glow.style.setProperty("--hue", hue);
 }, 100);
 
-/* Start audio context on user interaction (mobile fix) */
+/* Mobile Audio Start */
 document.body.addEventListener("click", () => {
   if (!audioCtx) initAudio();
 }, { once: true });
